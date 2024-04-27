@@ -8,6 +8,7 @@
   white-space: pre;
   height: calc(100vh - 100px);
   overflow: auto;
+  overscroll-behavior: none;
 }
 
 .code-header {

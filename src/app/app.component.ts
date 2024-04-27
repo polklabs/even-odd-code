@@ -103,7 +103,7 @@ export class AppComponent implements OnInit {
     }
 
     if (
-      element.scrollTop === height - clientHeight &&
+      height - clientHeight - element.scrollTop < 2 &&
       this.updatingScroll === false
     ) {
       this.updatingScroll = true;

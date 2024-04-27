@@ -18,6 +18,8 @@ html, body {
 body {
   display: flex;
   justify-content: center;
+  overflow: auto;
+  overscroll-behavior: none;
 }
 
 .p-dialog .p-dialog-header {
