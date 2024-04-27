@@ -15,6 +15,11 @@ html, body {
   background-color: #212121;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+}
+
 .p-dialog .p-dialog-header {
   background-color: #212121;
 }
