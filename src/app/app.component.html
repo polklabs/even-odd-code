@@ -1,8 +1,84 @@
-<div class="code-header">
-  <h3>isEven.js</h3>
-  <p-button icon="pi pi-download" severity="secondary"></p-button>
+<div class="file-wrapper">
+  <h1>Is It Even?</h1>
+
+  <p>
+    In the realm of programming, even the simplest of tasks can hold hidden
+    complexities. Take, for instance, the humble task of determining whether a
+    number is even or odd. While this might seem straightforward, there's often
+    more than meets the eye.
+  </p>
+
+  <p>
+    Let's explore how to create a function that can efficiently determine
+    whether a given integer is even or odd. But hold on tight, because unlike
+    some other implementations, we're not just handling all 64-bit numbers.
+    We're aiming for a solution that works for every integer!
+  </p>
+
+  <p>
+    To create a function that works for every integer, we could start by
+    manually checking each integer's parity through a series of if-else
+    statements. While this approach may seem laborious to the uninitiated, it
+    lays the groundwork for truly understanding the problem domain.
+  </p>
+
+  <p>
+    In this approach, we meticulously inspect each integer up to a certain point
+    and arrogantly proclaim its parity. No reliance on magical operators here;
+    just good old-fashioned logic. We return true if it's even and false if it's
+    odd. While this method may seem exhaustive to the feeble-minded, it prevents
+    edge cases related to the intricacies of even and odd numbers.
+  </p>
+
+  <p>
+    I know you may be thinking, "What about the magical modulo operator?", to
+    which you should think, "How do I know modulo works for all numbers?" Ah,
+    the folly of blind reliance on mathematical abstractions. But fear not, for
+    with each if-else statement, we forge our understanding, unbound by the
+    shackles of uncertainty.
+  </p>
+
+  <p>
+    So, the next time you encounter a programming challenge, remember the
+    lessons learned here. With patience and perseverance, you too can master the
+    art of programming, one perfectly crafted statement at a time.
+  </p>
+
+  <div class="code-header">
+    <h3>isEven.js</h3>
+    <p-button
+      (click)="onDownload()"
+      icon="pi pi-download"
+      severity="secondary"
+      pTooltip="Download"
+    ></p-button>
+  </div>
+  <div class="code-wrap" (scroll)="onScroll($event)">
+    <div [innerHTML]="start"></div>
+    <div *ngFor="let item of html" [innerHTML]="item"></div>
+  </div>
 </div>
-<div class="code-wrap" (scroll)="onScroll($event)">
-  <div [innerHTML]="start"></div>
-  <div *ngFor="let item of html" [innerHTML]="item"></div>
-</div>
+
+<p-dialog
+  header="Downloading File"
+  [(visible)]="showDownload"
+  (onHide)="stopDownload()"
+  [style]="{ 'max-width': '500px' }"
+  [draggable]="false"
+  [resizable]="false"
+>
+  <p-progressBar
+    mode="indeterminate"
+    [style]="{ height: '6px' }"
+  ></p-progressBar>
+  <p>
+    Transferred: [{{ fileSizeCount | filesize }} /
+    <span style="font-size: x-large">∞</span>]
+  </p>
+  <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis">
+    ETA:
+    {{ etaCount }}
+  </p>
+</p-dialog>
+
+<div class="footer">© 2024 <a href="https://www.polklabs.com/home" target="_blank">Polklabs</a></div>
