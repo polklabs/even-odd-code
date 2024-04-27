@@ -6,8 +6,8 @@ import { ButtonModule } from 'primeng/button';
 import * as Prism from 'prismjs';
 
 const batch = 20 as const;
-const elementHeight = 60 as const;
-const startHeight = 80 as const;
+const elementHeight = 57 as const;
+const startHeight = 76 as const;
 
 const startIndex = 2 as const;
 const count = 100;
@@ -20,7 +20,7 @@ const count = 100;
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-  title = 'even-odd-code';
+  title = 'Is Even?';
 
   start = 'function isEven(n) {\n\tif (n == 1) {\n\t\treturn false;\n\t}';
   html: string[] = [];

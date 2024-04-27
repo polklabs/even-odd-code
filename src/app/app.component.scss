@@ -12,6 +12,10 @@
 .code-header {
   border: solid 2px #272822;
   padding-left: 8px;
+  padding-right: 8px;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
