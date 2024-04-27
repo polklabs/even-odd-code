@@ -102,7 +102,11 @@ export class AppComponent implements OnInit {
       return;
     }
 
-    if (element.scrollTop === height - clientHeight) {
+    if (
+      element.scrollTop === height - clientHeight &&
+      this.updatingScroll === false
+    ) {
+      this.updatingScroll = true;
       // Remove first batch # of elements
       this.html.splice(0, batch);
       this.firstIndex += batch;
@@ -116,6 +120,7 @@ export class AppComponent implements OnInit {
       // Update scroll position so user doesn't realize they have moved
       setTimeout(() => {
         element.scrollTop = height - clientHeight - batch * elementHeight;
+        this.updatingScroll = false;
       });
     } else if (
       element.scrollTop < startHeight &&
